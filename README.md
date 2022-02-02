@@ -68,7 +68,7 @@ Prior to working with a customer there are three items that should be confirmed.
 
 #### 4-Post-Migration
 
-  * [Update Your Workloads and Applications](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/4-Post-Migration)
+  * [Update Your Workloads and Applications](https://github.com/Azure/adlsgen1togen2migration/tree/main/4-Post-Migration)
   * Update analytical pipelines
   * Update your SDKs from Gen1 to Gen2
   * Validate end to end scenarios on Gen2
@@ -79,7 +79,7 @@ Prior to working with a customer there are three items that should be confirmed.
 * [ADLS Gen 2 Hitchikers Guide](https://github.com/rukmani-msft/adlsguidancedoc/blob/master/Hitchhikers_Guide_to_the_Datalake.md)
 * [Cost Comparison](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=ccfb58ab-66fd-4dcc-a6da-7f52b24c223f#azure-data-lake-storage)
 * [Migration Deck](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=8cd43bbc-f909-4a30-bb14-1f047d592725#azure-data-lake-storage)
-* [Gen1 and Gen2 ACL Behavior and Differences](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/1-Assess/ADLS%20Gen1%20and%20Gen2%20ACL%20Behavior)
+* [Gen1 and Gen2 ACL Behavior and Differences](https://github.com/Azure/adlsgen1togen2migration/tree/main/1-Assess/ADLS%20Gen1%20and%20Gen2%20ACL%20Behavior)
 * [FAQs](https://github.com/Azure/adlsgen1togen2migration/tree/main/FAQs)
 
 

@@ -68,7 +68,7 @@ This version of code will have below limitations:
       
 ## Migration Framework Setup
 
-1. **Download the migration source code from [Github repository](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples) to local machine**:
+1. **Download the migration source code from [Github repository](https://github.com/Azure/adlsgen1togen2migration) to local machine**:
 
 ![image](https://user-images.githubusercontent.com/62351942/78950970-50058700-7a85-11ea-9485-9cd605b1e0fe.png)
 
@@ -81,17 +81,17 @@ The folder will contain below listed contents under **src**:
 
 
 
-* **Configuration**: This folder will have the configuration file [IncrementalLoadConfig.json](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/Configuration/IncrementalLoadConfig.json) and all the details of resource group and subscription along with source and destination path of ADLS Gen1 and Gen2.
+* **Configuration**: This folder will have the configuration file [IncrementalLoadConfig.json](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/Configuration/IncrementalLoadConfig.json) and all the details of resource group and subscription along with source and destination path of ADLS Gen1 and Gen2.
      
 * **Migration**: Contains the json files, templates to create dynamic data factory pipeline and copy the data from Gen1 to Gen2.
  
 * **Validation**: Contains the PowerShell scripts which will read the Gen1 and Gen2 data and validate it post migration to generate post migration report.
  
-* **[StartIncrementalLoadMigration](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/StartIncrementalLoadMigration.ps1)**: Script to invoke the migration activity by creating increment pipeline in the data factory.
+* **[StartIncrementalLoadMigration](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/StartIncrementalLoadMigration.ps1)**: Script to invoke the migration activity by creating increment pipeline in the data factory.
  
-* **[StartIncrementalLoadValidation](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/StartIncrementalLoadValidation.ps1)** : Script to invoke the Validation process to compare the data between Gen1 and Gen2 post migration and generate summary report.
+* **[StartIncrementalLoadValidation](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/StartIncrementalLoadValidation.ps1)** : Script to invoke the Validation process to compare the data between Gen1 and Gen2 post migration and generate summary report.
    
- **Note**: The [Full load Migration and Validation](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/StartFullLoadMigrationAndValidation.ps1) script is to migrate the full data load from Gen1 to Gen2.
+ **Note**: The [Full load Migration and Validation](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/StartFullLoadMigrationAndValidation.ps1) script is to migrate the full data load from Gen1 to Gen2.
   
  
  2. **Set up the Configuration file to connect to azure data factory**:
@@ -153,11 +153,11 @@ The folder will contain below listed contents under **src**:
 ```
  
   **Note**: Please note the **destinationPath** string will not be having Gen2 container name. It will have the file path same as Gen1.  
-   Path to [IncrementalLoadConfig.json](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/Configuration/IncrementalLoadConfig.json) script for more reference.
+   Path to [IncrementalLoadConfig.json](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/Configuration/IncrementalLoadConfig.json) script for more reference.
  
 3. **Azure data factory pipeline creation and execution**
 
- Run the script [StartIncrementalLoadMigration.ps1](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/StartIncrementalLoadMigration.ps1) to start the incremental copy process. 
+ Run the script [StartIncrementalLoadMigration.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/StartIncrementalLoadMigration.ps1) to start the incremental copy process. 
  
  ![image](https://user-images.githubusercontent.com/62351942/78946426-8a682780-7a77-11ea-973b-8f7cad667295.png)
 
@@ -183,7 +183,7 @@ The folder will contain below listed contents under **src**:
 
 
 
-  **Run the script** [StartIncrementalLoadValidation.ps1](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/StartIncrementalLoadValidation.ps1) in PowerShell.
+  **Run the script** [StartIncrementalLoadValidation.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/StartIncrementalLoadValidation.ps1) in PowerShell.
   
   ![image](https://user-images.githubusercontent.com/62353482/78954784-01121e80-7a92-11ea-8799-1b075e06b29d.png)
   
@@ -208,7 +208,7 @@ The CSV file will show the matched and unmatched records with Gen1 and Gen2 file
 
  This step will configure the path in the work loads and applications to Gen2 endpoint. 
  
- Please refer to [Application and Workload Update](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Application%20Update/README.md)
+ Please refer to [Application and Workload Update](https://github.com/Azure/adlsgen1togen2migration/tree/main/4-Post-Migration/Update%20Your%20Workloads%20and%20Applications)
   
    
 ## Reach out to us

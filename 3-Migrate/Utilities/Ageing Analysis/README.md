@@ -86,7 +86,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
   
 ### Get Started
 
-   **Download the migration source code from [Github repository](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/src/) to local machine**:
+   **Download the migration source code from [Github repository](https://github.com/Azure/adlsgen1togen2migration) to local machine**:
 
    ![image](https://user-images.githubusercontent.com/62351942/78950970-50058700-7a85-11ea-9485-9cd605b1e0fe.png)
 
@@ -128,7 +128,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
   ```
 ## Inventory Collection using PowerShell
 
-Run the script [Inventory.ps1](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Utilities/Ageing%20Analysis/Inventory/Inventory.ps1) which will   trigger the inventory collection process. 
+Run the script [Inventory.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Utilities/Ageing%20Analysis/Inventory/Inventory.ps1) which will   trigger the inventory collection process. 
  
   * The Inventory PowerShell script collects inventory details of given Application folder
   * The PowerShell code is run with minimum folder depth, especially for Large applications
@@ -157,7 +157,7 @@ Run the script [Inventory.ps1](https://github.com/rukmani-msft/adlsgen1togen2mig
 	
 ## Pivot Sheet using python snippet
 
- Run python script [PivotSheetGeneration.py](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Utilities/Ageing%20Analysis/Pivot/PivotSheetGeneration.py) for pivot sheet generation. Below are the steps how this script works:
+ Run python script [PivotSheetGeneration.py](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Utilities/Ageing%20Analysis/Pivot/PivotSheetGeneration.py) for pivot sheet generation. Below are the steps how this script works:
  
 * The python script is used for the generating pivot table in .xlsx document 
 * The Datasheets from multiple applications are placed in the output folder, python snippet takes the csv files as input and create Data pivot sheets respectively

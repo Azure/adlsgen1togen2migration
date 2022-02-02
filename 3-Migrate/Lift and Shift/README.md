@@ -109,7 +109,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
  
    * **Validation**: Contains the PowerShell scripts which will read the Gen1 and Gen2 data and write the comparison report post migration.
  
-   * **[StartFullLoadMigrationAndValidation](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Lift%20and%20Shift)** : Script to invoke the full load Migration and Validation process to compare the data between Gen1 and Gen2 post migration and generate summary report.
+   * **[StartFullLoadMigrationAndValidation.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1)**: Script to invoke the full load Migration and Validation process to compare the data between Gen1 and Gen2 post migration and generate summary report.
   
 ### How to Set up Configuration file
 

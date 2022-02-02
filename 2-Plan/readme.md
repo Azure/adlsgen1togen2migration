@@ -6,7 +6,7 @@ Have you thoroughly tested your migration before you go live?
 
 In addtion, please consider some of the things that worked well in Gen1. What didn't? Now is a great time to plan for some of these changes to rid the project of outstanding technical debt as possible. 
 
-To help you get started we have provided an [ADLS Migration Weekend Checklist](https://github.com/Azure/fta-adlsgen1togen2migration/blob/main/2-Plan/ADLSMigrationWeekendChecklist.md) that will help you assess what activities you need to accomplish during a *Migration Weekend*, and provided below a *"Target Architecture Definition"* that we have put together to help you think through some of these items:
+To help you get started we have provided an [ADLS Migration Weekend Checklist](https://github.com/Azure/adlsgen1togen2migration/blob/main/2-Plan/ADLSMigrationWeekendChecklist.md) that will help you assess what activities you need to accomplish during a *Migration Weekend*, and provided below a *"Target Architecture Definition"* that we have put together to help you think through some of these items:
 
 
 |Design Consideration  |Options  |Questions  |
@@ -18,4 +18,4 @@ To help you get started we have provided an [ADLS Migration Weekend Checklist](h
 |Redundancy Settings     |LRS, ZRS, GA-ZRS                                | Is LRS (locally redundant storage) enough? Or do you need a higher level for HA/DR or compliance reasons?                  |
 |Firewall                | VNet                                           | What are the vnet considerations you should consider? Can you deploy to the same vnet as Data Lake Gen1? Or do you need to create another? If another what type of impact does that have on differing compute applications?           |
 |Policies                |                                                | Are there Azure Policies already enforced by the platform team? Are there policies you would like to implement at the storage account level?         |
-|RBAC/ACL Strategy       |                                                | ACL's work slightly differently in ALDS Gen2. Read the ["Gen1 and Gen2 ACL Behavior readme"](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/1-Assess/ADLS%20Gen1%20and%20Gen2%20ACL%20Behavior) for an in-depth guide |
+|RBAC/ACL Strategy       |                                                | ACL's work slightly differently in ALDS Gen2. Read the ["Gen1 and Gen2 ACL Behavior readme"](https://github.com/Azure/adlsgen1togen2migration/tree/main/1-Assess/ADLS%20Gen1%20and%20Gen2%20ACL%20Behavior) for an in-depth guide |

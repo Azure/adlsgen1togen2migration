@@ -215,7 +215,7 @@ Considerations for using the dual pipeline pattern:
   
 ### Migrate data from Gen1 to Gen2
 
-   To migrate the existing data from Gen1 to Gen2, please refer to [lift and shift](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/tree/master/src/Lift%20and%20Shift) pattern.
+   To migrate the existing data from Gen1 to Gen2, please refer to [lift and shift](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Lift%20and%20Shift) pattern.
  
 ### Data ingestion to Gen1 and Gen2
 

@@ -75,7 +75,7 @@ Considerations for using the bi-directional sync pattern:
     
     **Note**: The DNS name can be taken from VM Overview details.
   
- 4. **Set up ADLS Gen1 and Gen2 storage**.[Click here](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Bi-directional/WANdisco%20Set%20up%20and%20Installation.md#adls-gen1-and-gen2-configuration) to know more.
+ 4. **Set up ADLS Gen1 and Gen2 storage**. [Click here](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Bi-directional/WANdisco%20Set%20up%20and%20Installation.md#adls-gen1-and-gen2-configuration) to know more.
  
    
 ## Create Replication Rule
