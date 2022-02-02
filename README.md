@@ -1,6 +1,6 @@
 ## <img src="Assets/images/adlsmigrationreadiness.png" alt="ADLS Gen1 to Gen2 Migrations" style="float: left; margin-right:10px;" />
 
-Azure Data Lake Storage (ADLS) Gen 1 is being replaced by Gen 2. The end of life for Gen 1 is Feb 2024 ([Retirement Announcement](https://azure.microsoft.com/en-us/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). We are running a Program with the Customer Support Unit (CSU), Fasttrack Team and Azure Storage Product Group to ensure our customer base can successfully migrate from ADLS Gen 1 to ADLS Gen 2 in the timeframe noted above. This readiness  github repo is meant to serve as insight into the options for migrating, as well as how to complete a migration as efficiently and accurately as possible.
+Azure Data Lake Storage (ADLS) Gen 1 is being replaced by Gen 2. The end of life for Gen 1 is Feb 2024 ([Retirement Announcement](https://azure.microsoft.com/en-us/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). We are running a Program with the Customer Support Unit (CSU), FastTrack Team and Azure Storage Product Group to ensure our customer base can successfully migrate from ADLS Gen 1 to ADLS Gen 2 in the timeframe noted above. This readiness  github repo is meant to serve as insight into the options for migrating, as well as how to complete a migration as efficiently and accurately as possible.
 
 
 ### Key Updates
@@ -48,7 +48,7 @@ Prior to working with a customer there are three items that should be confirmed.
     * [Dual Pipeline Migration Pattern](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Dual%20pipeline)
     * [Bi-directional Sync Pattern (Wan Disco)](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Bi-directional)
 
-* Evaluate your [ADLS Migration Weekend Checklist](https://github.com/AndresPad/fta-adlsgen1togen2migration/blob/main/2-Plan/ADLSMigrationWeekendChecklist.md) 
+* Evaluate your [ADLS Migration Weekend Checklist](https://github.com/Azure/adlsgen1togen2migration/blob/main/2-Plan/ADLSMigrationWeekendChecklist.md) 
 
 #### 3-Migrate
 
