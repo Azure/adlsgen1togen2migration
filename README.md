@@ -21,9 +21,9 @@ Below you will find the latest on update on key items with ADLS Gen 1 to Gen 2 M
 
 ## Mindmap(s)
 
-#### Highlevel Mindmap
+#### Public Mindmap
 [![PublicMindMap](/Assets/images/mindmapexternal.png)](https://mm.tt/2020056330?t=RavfcdPct7)
-#### Detailed Mindmap
+#### Private Mindmap
 [![PrivateMindMap](/Assets/images/mindmapinternal.png)](https://mm.tt/1970300334?t=8XLVfXEO19)
 
 ### Steps to Migrate from ADLS Gen 1 to Gen 2:
