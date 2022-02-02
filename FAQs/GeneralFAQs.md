@@ -57,7 +57,7 @@ ADLS Gen2 is also integrated with all the newer Azure Analytics offerings such a
 
 **A:** You can start with this [document (Migrate Azure Data Lake Storage from Gen1 to Gen2)](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-migrate-gen1-to-gen2) to learn more about ADLS Gen1 to Gen2 migration. 
 
-Please be advised that the migration from ADLS Gen1 to Gen2 involves data migration as well updating the applications to use Gen2. You can find more documentation on the step-by-step approach to migrating your data and applications in these [samples (Migrate Azure Data Lake Storage from Gen1 to Gen2)](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples).  
+Please be advised that the migration from ADLS Gen1 to Gen2 involves data migration as well updating the applications to use Gen2. You can find more documentation on the step-by-step approach to migrating your data and applications in these [samples (Migrate Azure Data Lake Storage from Gen1 to Gen2)](https://github.com/Azure/adlsgen1togen2migration).  
 
 ##
 **Q:** *Where can customers go for answers to questions?*
@@ -95,7 +95,7 @@ Please be advised that the migration from ADLS Gen1 to Gen2 involves data migrat
 
 **A:** You can start with this [document](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-migrate-gen1-to-gen2) to learn more about ADLS Gen1 to Gen2 migration. 
 
-Please be advised that the migration from ADLS Gen1 to Gen2 involves data migration as well updating the applications to use Gen2. You can find more documentation on the step-by-step approach to migrating your data and applications in these [samples](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples).  
+Please be advised that the migration from ADLS Gen1 to Gen2 involves data migration as well updating the applications to use Gen2. You can find more documentation on the step-by-step approach to migrating your data and applications in these [samples](https://github.com/Azure/adlsgen1togen2migration).  
 
 ##
 **Q:** *How long does it take for my customer to migrate from ADLS Gen1 to ADLS Gen2?*

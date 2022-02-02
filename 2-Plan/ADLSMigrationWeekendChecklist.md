@@ -56,12 +56,7 @@ Below is a high-level checklist that will help clients juggle the numerous items
 <tr>
     <td style="vertical-align: top;">✔️</td>
     <td style="vertical-align: top;">Remove Throttling</td>
-    <td>Did you contact the PG with the applicable Subscription ID(s) and Account Name(s) so they can coordinate the window for removing the throttles/meters on the ADLS Gen2 Account?
-
-<br />
-<br />
-<a href="https://github.com/Azure/adlsgen1togen2migration/blob/main/1-Assess/Telemetry.md" target="_blank">Telemetry</a>
-</td>
+    <td>Did you contact the PG with the applicable Subscription ID(s) and Account Name(s) so they can coordinate the window for removing the throttles/meters on the ADLS Gen2 Account?</td>
  </tr>
  <tr>
     <td style="vertical-align: top;">✔️</td>
@@ -264,9 +259,7 @@ Did you practice the migration process several times to ensure:
 <tr>
     <td style="vertical-align: top;">✔️</td>
     <td style="vertical-align: top;">Performance</td>
-    <td>Verify that performance metrics are being generated.
-    <br />
-   <a href="https://github.com/Azure/adlsgen1togen2migration/blob/main/1-Assess/Telemetry.md" target="_blank">Telemetry</a>
+    <td>Verify that <a href="https://github.com/Azure/adlsgen1togen2migration/blob/main/1-Assess/Telemetry.md" target="_blank">performance</a> metrics are being generated.
 </td>
  </tr>
 <tr>

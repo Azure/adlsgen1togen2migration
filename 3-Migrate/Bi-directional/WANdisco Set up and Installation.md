@@ -59,7 +59,7 @@ This quickstart will help in setting up the Azure Linux Virtual Machine (VM) sui
   
   ![image](https://user-images.githubusercontent.com/62353482/80262658-000cef80-8643-11ea-9007-462dc366e2d3.png)
 
-  8. Leave the defaults under **Disks**, **Networking**, **Management** . In the **Advanced** tab under **Cloud init** text field, paste the [cloud init](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Bi-directional/cloud-init.txt) content. 
+  8. Leave the defaults under **Disks**, **Networking**, **Management** . In the **Advanced** tab under **Cloud init** text field, paste the [cloud init](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Bi-directional/cloud-init.txt) content. 
   
   
   ![image](https://user-images.githubusercontent.com/62353482/80263267-f2586980-8644-11ea-86b8-4b1714779948.png)
@@ -232,7 +232,7 @@ The above DNS name can be used to login into SSH client.
 
 **You found a bug or want to propose a feature?**
 
-File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/issues/new).
+File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/Azure/adlsgen1togen2migration/issues/new).
 Make sure to remove any credential from your code before sharing it.
 
    

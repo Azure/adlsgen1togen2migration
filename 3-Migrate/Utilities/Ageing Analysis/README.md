@@ -128,7 +128,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
   ```
 ## Inventory Collection using PowerShell
 
-Run the script [Inventory.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Utilities/Ageing%20Analysis/Inventory/Inventory.ps1) which will   trigger the inventory collection process. 
+Run the script [Inventory.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Utilities/Ageing%20Analysis/Inventory/Inventory.ps1) which will trigger the inventory collection process. 
  
   * The Inventory PowerShell script collects inventory details of given Application folder
   * The PowerShell code is run with minimum folder depth, especially for Large applications
@@ -177,7 +177,7 @@ Run the script [Inventory.ps1](https://github.com/Azure/adlsgen1togen2migration/
 
   **You found a bug or want to propose a feature?**
 
-   File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/issues/new)
+   File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/Azure/adlsgen1togen2migration/issues/new)
    
 ## References
 

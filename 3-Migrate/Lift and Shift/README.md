@@ -165,7 +165,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
  
  ### Azure data factory pipeline creation and execution
 
-   Run the script [StartFullLoadMigrationAndValidation.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) which will trigger the    migration and validation process. This step will create the data factory as per the configuration file.
+   Run the script [StartFullLoadMigrationAndValidation.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) which will trigger the migration and validation process. This step will create the data factory as per the configuration file.
  
  ![image](https://user-images.githubusercontent.com/62353482/83554216-4adf1a00-a4c1-11ea-9ea4-ae9284e678c0.png)
  
@@ -179,7 +179,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
  
  ## Data Validation 
 
-  The [script](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) triggers the data       validation process between Gen1 and Gen2 once the **migration is completed** in above step.  
+  The [script](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) triggers the data validation process between Gen1 and Gen2 once the **migration is completed** in above step.  
  
  To monitor the execution details for each copy activity, select the Details link (eyeglasses image) under Actions in the activity monitoring view. You can monitor details like the volume of data copied from the source to the sink, data throughput, execution steps with corresponding duration, and used configurations.
   

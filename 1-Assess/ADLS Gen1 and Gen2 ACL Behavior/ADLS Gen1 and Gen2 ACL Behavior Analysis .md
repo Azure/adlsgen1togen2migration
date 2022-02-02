@@ -53,14 +53,14 @@ Check the identity inputs for UPN format APIs  (Eg:GetAclStatus, Liststatus ,Get
 
 Scenario  | GEN1 Behavior | GEN2 Behavior |
 ------------- | ------------- |-----------|
-RBAC roles and access control | All users in RBAC Owner role are superusers. All other users (non-superusers),need to have permission that abides by File Folder ACL. Refer [here](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-access-control)for more details | All users in ‘RBAC -Storage blob data owner’ role are superusers. All other users can be provided different roles(contributor, reader etc.) that govern their read, write and delete permissions, this takes precedence to the ACLs sent on individual file or folder. Refer [here](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-access-control) for more details  |
+RBAC roles and access control | All users in RBAC Owner role are superusers. All other users (non-superusers),need to have permission that abides by File Folder ACL. Refer [here](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-access-control) for more details | All users in ‘RBAC -Storage blob data owner’ role are superusers. All other users can be provided different roles(contributor, reader etc.) that govern their read, write and delete permissions, this takes precedence to the ACLs sent on individual file or folder. Refer [here](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-access-control) for more details  |
 
 
 ## 4.	STORE DEFAULT PERMISSION ##
 
 Scenario  | GEN1 Behavior | GEN2 Behavior |
 ------------- | ------------- |-----------|
-Check if default permission is considered during file and directory creation  | Permissions for an item(file/directory) cannot be inherited from the parent items. Refer [here](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-access-control) | Permissions are only inherited if default permissions have been set on the parent items before the child items have been created. Refer [here](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control)  | 
+Check if default permission is considered during file and directory creation  | Permissions for an item(file/directory) cannot be inherited from the parent items. Refer [here](https://docs.microsoft.com/en-us/azure/data-lake-store/data-lake-store-access-control) for more details | Permissions are only inherited if default permissions have been set on the parent items before the child items have been created. Refer [here](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-access-control) for more details | 
 
 
 ## 5.	USER PROVIDED PERMISSION ON FILE/DIRECTORY CREATION ##
@@ -96,7 +96,7 @@ Permissions of file/directory can be controlled by applying UMASK on it.  | Clie
 
 **You found a bug or want to propose a feature?**
 
-File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/issues/new).
+File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/Azure/adlsgen1togen2migration/issues/new).
 Make sure to remove any credential from your code before sharing it.
 
 ## References
