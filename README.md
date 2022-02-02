@@ -44,10 +44,10 @@ Prior to working with a customer there are three items that should be confirmed.
   * There are 5 different options for a customer to use for migration depending on the the business. 
   * These options are listed from least to most complex below:
     * [Migration Experience (M3) Tool - Public Preview](https://docs.microsoft.com/en-us/azure/storage/blobs/data-lake-storage-migrate-gen1-to-gen2-azure-portal)
-    * [Incremental Copy Migration Pattern](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/src/Incremental)
-    * [Lift and Shift Migration Pattern](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/src/Lift%20and%20Shift)
-    * [Dual Pipeline Migration Pattern](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/src/Dual%20pipeline)
-    * [Bi-directional Sync Pattern (Wan Disco)](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/src/Bi-directional)
+    * [Incremental Copy Migration Pattern](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Incremental)
+    * [Lift and Shift Migration Pattern](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Lift%20and%20Shift)
+    * [Dual Pipeline Migration Pattern](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Dual%20pipeline)
+    * [Bi-directional Sync Pattern (Wan Disco)](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Bi-directional)
 
 * Evaluate your [ADLS Migration Weekend Checklist](https://github.com/AndresPad/fta-adlsgen1togen2migration/blob/main/2-Plan/ADLSMigrationWeekendChecklist.md) 
 
