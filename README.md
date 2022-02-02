@@ -2,12 +2,7 @@
 
 In February of 2021, Azure Data Lake Product Group announced deprecation of ADLS Gen 1 with retirement happening in February of 2024. Currently there are about ~4.5k Customers who are still on ADLS Gen 1. This readiness guide is meant to serve as inight on the options for migration as well as how to complete it efficiently and quickly as possible.
 
-| Key Contacts | Name | GitHub ID | Email |
-|------|------|-----------|------|
-| ADLS Service Lead | Andrés Padilla | @AndresPad  | andres.padilla@microsoft.com | 
-| FTA PM Contact | Mamta Shah  | @FTMS001 | Mamta.Shah@microsoft.com |
-| Engineering Enablement Contact | Nomita Paul | | nomita.paul@microsoft.com |
-  Senior PG PM | Vijay Palaniappan  |  | vijeyp@microsoft.com |
+
 
 ### Key Updates
 Below you will find the latest on update on key items with ADLS Gen 1 to Gen 2 Migrations.
@@ -21,10 +16,7 @@ Below you will find the latest on update on key items with ADLS Gen 1 to Gen 2 M
 
 ## Mindmap(s)
 
-#### Public Mindmap
 [![PublicMindMap](/Assets/images/mindmapexternal.png)](https://mm.tt/2020056330?t=RavfcdPct7)
-#### Private Mindmap
-[![PrivateMindMap](/Assets/images/mindmapinternal.png)](https://mm.tt/1970300334?t=8XLVfXEO19)
 
 ### Steps to Migrate from ADLS Gen 1 to Gen 2:
 Prior to working with a customer there are three items that should be confirmed.
