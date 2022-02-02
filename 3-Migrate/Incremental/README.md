@@ -1,6 +1,6 @@
 Incremental Copy Pattern Guide: A quick start template
 ===================================================
-*Note: The public facing guide on this process, that can be shared with customer, can be found [here](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples).
+
 ## Overview
 
 The purpose of this document is to provide a manual for the Incremental copy pattern from Azure Data Lake Storage 1 (Gen1) to Azure Data Lake Storage 2 (Gen2) using Azure Data Factory and PowerShell. As such it provides the directions, references, sample code examples of the PowerShell functions been used. It is intended to be used in form of steps to follow to implement the solution from local machine.

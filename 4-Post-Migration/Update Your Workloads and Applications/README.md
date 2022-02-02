@@ -60,7 +60,7 @@ This can be applicable for below migration patterns:
  
  ![image](https://user-images.githubusercontent.com/62353482/83693292-ac2ee800-a5aa-11ea-878e-e8f6d72daf72.png)
 
-  **Note**: Refer to [IncrementalSampleLoad](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/Application/IncrementSampleLoad.py) script for more details.
+  **Note**: Refer to [IncrementalSampleLoad](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/Application/IncrementSampleLoad.py) script for more details.
  
  **After the migration**:
   
@@ -72,7 +72,7 @@ This can be applicable for below migration patterns:
 
  ![image](https://user-images.githubusercontent.com/62353482/79009824-49beeb80-7b15-11ea-8d14-ce444f7fd4b8.png)
 
-  **Note**: Refer to [mountconfiguration](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Incremental/Application/MountConfiguration.py) script for more details.
+  **Note**: Refer to [mountconfiguration](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Incremental/Application/MountConfiguration.py) script for more details.
   
  **2. Reschedule the job scheduler**
 
@@ -117,7 +117,7 @@ This can be applicable for below migration patterns:
   
  ## How to Configure and update HDInsight
   
-   Applies where HDInsight is used as workload to process the Raw data and execute the transformations. Below is the step by step process used as part of [Dual pipeline pattern](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/tree/master/src/Dual%20pipeline#how-to-set-up-gen1-data-pipeline).
+   Applies where HDInsight is used as workload to process the Raw data and execute the transformations. Below is the step by step process used as part of [Dual pipeline pattern](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Dual%20pipeline#how-to-set-up-gen1-data-pipeline).
   
    **Prerequisite**
    
@@ -139,7 +139,7 @@ This can be applicable for below migration patterns:
    
   ## How to configure and update Azure Synapse Analytics
   
-   Applies to the data pipelines having Azure synapse analytics formerly called as **Azure SQL DW** as one of the workloads. Below is the step by step process used as part of [Dual pipeline pattern](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/tree/master/src/Dual%20pipeline#how-to-set-up-gen1-data-pipeline) :
+   Applies to the data pipelines having Azure synapse analytics formerly called as **Azure SQL DW** as one of the workloads. Below is the step by step process used as part of [Dual pipeline pattern](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Dual%20pipeline#how-to-set-up-gen1-data-pipeline) :
    
    **Before Migration**
    

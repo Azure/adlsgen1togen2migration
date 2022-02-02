@@ -1,6 +1,6 @@
 Bi-directional sync pattern Guide: A quick start template
 ===================================================
-*Note: The public facing guide on this process, that can be shared with customer, can be found [here](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples).
+
 ## Overview
 
 This manual will introduce [WANdisco](https://docs.wandisco.com/bigdata/wdfusion/adls/) as a recommended tool to set up bi-directional sync between ADLS Gen1 and Gen2 using the Replication feature. Below will be covered as part of this guide:
@@ -27,7 +27,7 @@ Considerations for using the bi-directional sync pattern:
    * [Create Replication Rule](#create-replication-rule)
    * [Consistency check](#consistency-check)
    * [Migration using LiveMigrator](#migration-using-livemigrator)
-   * [Managing Replication](managing-replication)
+   * [Managing Replication](#managing-replication)
    * [Application Update](#application-update)
      * [Mount path configuration](#mount-path-configuration)
      * [Beginning State](#beginning-state)
@@ -47,7 +47,7 @@ Considerations for using the bi-directional sync pattern:
 
    * **Licenses for WANdisco Fusion** that accommodate the volume of data that you want to make available to ADLS Gen2
 
-   * **Azure Linux Virtual Machine** .Please refer here to know :link: [How to create Azure VM](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Bi-directional/Wandisco%20Set%20up%20and%20Installation.md)
+   * **Azure Linux Virtual Machine** .Please refer here to know :link: [How to create Azure VM](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Bi-directional/WANdisco%20Set%20up%20and%20Installation.md)
 
    * **Windows SSH client** like [Putty](https://www.putty.org/), [Git for Windows](https://gitforwindows.org/), [Cygwin](https://cygwin.com/), [MobaXterm](https://mobaxterm.mobatek.net/)
 
@@ -60,7 +60,7 @@ Considerations for using the bi-directional sync pattern:
 
  2. **Start the Fusion**
  
-    Go to **SSH Client**. [Connect](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Bi-directional/Wandisco%20Set%20up%20and%20Installation.md#connect-to-vm) and run below commands:
+    Go to **SSH Client**. [Connect](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Bi-directional/WANdisco%20Set%20up%20and%20Installation.md#connect-to-vm) and run below commands:
  
     ```scala
        cd fusion-docker-compose // Change to the repository directory
@@ -75,7 +75,7 @@ Considerations for using the bi-directional sync pattern:
     
     **Note**: The DNS name can be taken from VM Overview details.
   
- 4. **Set up ADLS Gen1 and Gen2 storage**.[Click here](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Bi-directional/WANdisco%20Set%20up%20and%20Installation.md#adls-gen1-and-gen2-configuration) to know more.
+ 4. **Set up ADLS Gen1 and Gen2 storage**.[Click here](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Bi-directional/WANdisco%20Set%20up%20and%20Installation.md#adls-gen1-and-gen2-configuration) to know more.
  
    
 ## Create Replication Rule
@@ -223,7 +223,7 @@ Once HCFS replication rule is created, migration activity can be started using t
  ![image](https://user-images.githubusercontent.com/62353482/81351734-dc519c80-9079-11ea-8a8e-669b65e17b49.png)
 
 
-Follow the steps for the [migration](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Bi-directional/README.md#migration-using-livmigrator) of Gen1 data to Gen2 for the Raw and Processed data.
+Follow the steps for the [migration](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Bi-directional/README.md#migration-using-livmigrator) of Gen1 data to Gen2 for the Raw and Processed data.
 
 Once the data is migrated, run **Consistency check** in Fusion UI. There should be no inconsistencies.
 

@@ -1,6 +1,6 @@
 Dual Pipeline Pattern Guide: A quick start template
 ===================================================
-*Note: The public facing guide on this process can be found [here](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples).
+
 ## Overview
 
 The purpose of this document is to provide a manual for the use of Dual pipeline pattern for migration of data from Gen1 to Gen2. This provides the directions, references and approach how to set up the Dual pipeline, do migration of existing data from Gen1 to Gen2 and set up the workloads to run at Gen2 endpoint.

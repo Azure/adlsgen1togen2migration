@@ -62,5 +62,5 @@ AzureDiagnostics
 # Inventory 
 In addition to gathering the telemetry of what's currently being accessed, you should also be aware of the overall inventory of your environment. 
 
-Here we've included a helpful PowerShell script to run against your environment. See here for more information: [Ageing Analysis Guide: A quick start template](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/3-Migrate/Utilities/Ageing%20Analysis)
+Here we've included a helpful PowerShell script to run against your environment. See here for more information: [Ageing Analysis Guide: A quick start template](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Utilities/Ageing%20Analysis)
 

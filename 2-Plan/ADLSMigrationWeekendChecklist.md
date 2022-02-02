@@ -23,7 +23,7 @@ Below is a high-level checklist that will help clients juggle the numerous items
   <tr>
     <td style="vertical-align: top;">✔️</td>
     <td style="vertical-align: top;">Inventory: File and Folder Counts</td>
-    <td>Did you take note of all the File Counts and Folder Counts, etc. and make sure you have the expected counts from your ADLS Gen1 Account? <br /><br /><a href="https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/3-Migrate/Utilities/Ageing%20Analysis" target="_blank">Ageing Analysis Guide: A quick start template</a></td>
+    <td>Did you take note of all the File Counts and Folder Counts, etc. and make sure you have the expected counts from your ADLS Gen1 Account? <br /><br /><a href="https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Utilities/Ageing%20Analysis" target="_blank">Ageing Analysis Guide: A quick start template</a></td>
   </tr>
  <tr>
     <td style="vertical-align: top;">✔️</td>
@@ -60,7 +60,7 @@ Below is a high-level checklist that will help clients juggle the numerous items
 
 <br />
 <br />
-<a href="https://github.com/Azure/fta-adlsgen1togen2migration/blob/main/1-Assess/Telemetry.md" target="_blank">Telemetry</a>
+<a href="https://github.com/Azure/adlsgen1togen2migration/blob/main/1-Assess/Telemetry.md" target="_blank">Telemetry</a>
 </td>
  </tr>
  <tr>
@@ -266,7 +266,7 @@ Did you practice the migration process several times to ensure:
     <td style="vertical-align: top;">Performance</td>
     <td>Verify that performance metrics are being generated.
     <br />
-   <a href="https://github.com/christophermschmidt/adlsgen1togen2migrationsamples/tree/caedev/1-Assess" target="_blank">Telemetry</a>
+   <a href="https://github.com/Azure/adlsgen1togen2migration/blob/main/1-Assess/Telemetry.md" target="_blank">Telemetry</a>
 </td>
  </tr>
 <tr>

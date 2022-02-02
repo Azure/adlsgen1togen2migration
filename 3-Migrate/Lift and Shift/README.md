@@ -1,6 +1,6 @@
 Lift and Shift Copy Pattern Guide: A quick start template
 =========================================================
-*Note: The public facing guide on this process can be found [here](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples).
+
 ## Overview
 
 The purpose of this document is to provide a manual in form of step by step guide for the lift and shift copy pattern from Gen1 to Gen2 storage using Azure Data Factory and PowerShell. As such it provides the directions, references, sample code examples of the PowerShell functions been used. 
@@ -90,7 +90,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
 
 ### Get Started
 
-   **Download the migration source code from [Github repository](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/src/) to local machine**:
+   **Download the migration source code from [Github repository](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate) to local machine**:
 
    ![image](https://user-images.githubusercontent.com/62351942/78950970-50058700-7a85-11ea-9485-9cd605b1e0fe.png)
 
@@ -103,13 +103,13 @@ To learn more, see [create service principal account](https://docs.microsoft.com
 
    * **Application**: This folder will have sample code for Mount path configuration.
 
-   * **Configuration**: This folder will have the configuration file [FullLoadConfig.json](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/tree/master/src/Lift%20and%20Shift/Configuration) and all the required details of resource group and subscription along with source and destination path of ADLS Gen1 and Gen2.
+   * **Configuration**: This folder will have the configuration file [FullLoadConfig.json](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Lift%20and%20Shift/Configuration) and all the required details of resource group and subscription along with source and destination path of ADLS Gen1 and Gen2.
      
    * **Migration**: Contains the templates to create dynamic data factory pipeline and copy the data from Gen1 to Gen2.
  
    * **Validation**: Contains the PowerShell scripts which will read the Gen1 and Gen2 data and write the comparison report post migration.
  
-   * **[StartFullLoadMigrationAndValidation](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/tree/master/src/Lift%20and%20Shift)** : Script to invoke the full load Migration and Validation process to compare the data between Gen1 and Gen2 post migration and generate summary report.
+   * **[StartFullLoadMigrationAndValidation](https://github.com/Azure/adlsgen1togen2migration/tree/main/3-Migrate/Lift%20and%20Shift)** : Script to invoke the full load Migration and Validation process to compare the data between Gen1 and Gen2 post migration and generate summary report.
   
 ### How to Set up Configuration file
 
@@ -161,11 +161,11 @@ To learn more, see [create service principal account](https://docs.microsoft.com
    ```
  
   **NOTE**: The **destinationPath** string will not be having Gen2 container name. It will have the file path same as Gen1.  
-   Path to [FullLoadConfig.json](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Lift%20and%20Shift/Configuration/FullLoadConfig.json) script for more reference.
+   Path to [FullLoadConfig.json](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/Configuration/FullLoadConfig.json) script for more reference.
  
  ### Azure data factory pipeline creation and execution
 
-   Run the script [StartFullLoadMigrationAndValidation.ps1](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) which will trigger the    migration and validation process. This step will create the data factory as per the configuration file.
+   Run the script [StartFullLoadMigrationAndValidation.ps1](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) which will trigger the    migration and validation process. This step will create the data factory as per the configuration file.
  
  ![image](https://user-images.githubusercontent.com/62353482/83554216-4adf1a00-a4c1-11ea-9ea4-ae9284e678c0.png)
  
@@ -179,7 +179,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
  
  ## Data Validation 
 
-  The [script](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/blob/master/src/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) triggers the data       validation process between Gen1 and Gen2 once the **migration is completed** in above step.  
+  The [script](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/StartFullLoadMigrationAndValidation.ps1) triggers the data       validation process between Gen1 and Gen2 once the **migration is completed** in above step.  
  
  To monitor the execution details for each copy activity, select the Details link (eyeglasses image) under Actions in the activity monitoring view. You can monitor details like the volume of data copied from the source to the sink, data throughput, execution steps with corresponding duration, and used configurations.
   
@@ -205,13 +205,13 @@ To learn more, see [create service principal account](https://docs.microsoft.com
 
  This step will configure the path in the workloads to Gen2 endpoint. 
  
- Refer to [Application and Workload Update](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/tree/master/src/Application%20Update) on how to plan and migrate workloads and applications to Gen2.
+ Refer to [Application and Workload Update](https://github.com/Azure/adlsgen1togen2migration/tree/main/4-Post-Migration/Update%20Your%20Workloads%20and%20Applications) on how to plan and migrate workloads and applications to Gen2.
  
 ## Reach out to us
 
    **You found a bug or want to propose a feature?**
 
-   File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/rukmani-msft/adlsgen1togen2migrationsamples/issues/new).
+   File an issue here on GitHub: [![File an issue](https://img.shields.io/badge/-Create%20Issue-6cc644.svg?logo=github&maxAge=31557600)](https://github.com/Azure/adlsgen1togen2migration/issues/new).
 
 ## References
 

@@ -75,7 +75,7 @@ Please be advised that the migration from ADLS Gen1 to Gen2 involves data migrat
 5. Under Problem type, Troubleshoot configuration issue 
 6. Under Problem subtype, My issue is not listed 
 
-![image](https://github.com/AndresPad/fta-adlsgen1togen2migration/blob/main/Assets/images/supportrequest.PNG)
+![image](https://github.com/Azure/adlsgen1togen2migration/blob/main/Assets/images/supportrequest.PNG)
 
 ---
 

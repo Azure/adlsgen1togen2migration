@@ -1,6 +1,6 @@
 ## <img src="Assets/images/adlsmigrationreadiness.png" alt="ADLS Gen1 to Gen2 Migrations" style="float: left; margin-right:10px;" />
 
-Azure Data Lake Storage (ADLS) Gen 1 is being replaced by Gen 2. The end of life for Gen 1 is Feb 2024 ([Retirement Announcement](https://azure.microsoft.com/en-us/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). We are running a Program with the Customer Support Unit (CSU), FastTrack Team and Azure Storage Product Group to ensure our customer base can successfully migrate from ADLS Gen 1 to ADLS Gen 2 in the timeframe noted above. This readiness  github repo is meant to serve as insight into the options for migrating, as well as how to complete a migration as efficiently and accurately as possible.
+Azure Data Lake Storage (ADLS) Gen 1 is being replaced by Gen 2. The end of life for Gen 1 is Feb 2024 ([Retirement Announcement](https://azure.microsoft.com/en-us/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). We are running a Program with the Customer Support Unit (CSU), FastTrack Team and Azure Storage Product Group to ensure our customer base can successfully migrate from ADLS Gen 1 to ADLS Gen 2 in the timeframe noted above. This readiness github repo is meant to serve as insight into the options for migrating, as well as how to complete a migration as efficiently and accurately as possible.
 
 
 ### Key Updates
@@ -76,13 +76,10 @@ Prior to working with a customer there are three items that should be confirmed.
 
 
 ## Useful Resources/Links
-*PM Readiness can be found [here](https://github.com/Azure/fta-adlsgen1togen2migration/blob/main/PMReadiness.md).*
-* [Migration Webinar (Patterns, Samples, and Engagement Model)](https://msit.microsoftstream.com/video/6b19a4ff-0400-a521-1034-f1eab7c6793b)
-* [ADLS Gen 2 Hitchikers Guide](https://github.com/rukmani-msft/adlsguidancedoc/blob/master/Hitchhikers_Guide_to_the_Datalake.md) (Public Facing)
-* [Cost Comparison](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=ccfb58ab-66fd-4dcc-a6da-7f52b24c223f#azure-data-lake-storage) (Public Facing)
-* [Migration Deck](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=8cd43bbc-f909-4a30-bb14-1f047d592725#azure-data-lake-storage) (Public Facing)
+* [ADLS Gen 2 Hitchikers Guide](https://github.com/rukmani-msft/adlsguidancedoc/blob/master/Hitchhikers_Guide_to_the_Datalake.md)
+* [Cost Comparison](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=ccfb58ab-66fd-4dcc-a6da-7f52b24c223f#azure-data-lake-storage)
+* [Migration Deck](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=8cd43bbc-f909-4a30-bb14-1f047d592725#azure-data-lake-storage)
 * [Gen1 and Gen2 ACL Behavior and Differences](https://github.com/Azure/fta-adlsgen1togen2migration/tree/main/1-Assess/ADLS%20Gen1%20and%20Gen2%20ACL%20Behavior)
-* [Customer FAQ](https://nam06.safelinks.protection.outlook.com/ap/w-59584e83/?url=https%3A%2F%2Fmicrosoft-my.sharepoint.com%2F%3Aw%3A%2Fp%2Frugopala%2FEY6XAx7Tp3RIvJVf-gL2PcIBsAuvtUdaTEjqqmk64jHnEw%3Fe%3Da0RUMt&data=04%7C01%7CKhendra.Reid%40microsoft.com%7C560bdd7834c9455850e708d8cdd638f3%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C637485667251086898%7CUnknown%7CTWFpbGZsb3d8eyJWIjoiMC4wLjAwMDAiLCJQIjoiV2luMzIiLCJBTiI6Ik1haWwiLCJXVCI6Mn0%3D%7C1000&sdata=QjgEV3kjf0gD0bANdbdoExd%2BU%2FYDMste8j2Aatn%2Bgnw%3D&reserved=0)
 * [FAQs](https://github.com/Azure/adlsgen1togen2migration/tree/main/FAQs)
 
 
