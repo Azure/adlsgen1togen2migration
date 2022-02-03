@@ -1,6 +1,6 @@
 ## <img src="Assets/images/adlsmigrationreadiness.png" alt="ADLS Gen1 to Gen2 Migrations" style="float: left; margin-right:10px;" />
 
-Azure Data Lake Storage (ADLS) Gen 1 is being replaced by Gen 2. The end of life for Gen 1 is Feb 2024 ([Retirement Announcement](https://azure.microsoft.com/en-us/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). We are running a Program with the Customer Support Unit (CSU), FastTrack Team and Azure Storage Product Group to ensure our customer base can successfully migrate from ADLS Gen 1 to ADLS Gen 2 in the timeframe noted above. This readiness github repo is meant to serve as insight into the options for migrating, as well as how to complete a migration as efficiently and accurately as possible.
+Azure Data Lake Storage (ADLS) Gen 1 is being replaced by Gen 2. The end of life for Gen 1 is Feb 2024 ([Retirement Announcement](https://azure.microsoft.com/en-us/updates/action-required-switch-to-azure-data-lake-storage-gen2-by-29-february-2024/). We are running a Program with the Customer Support Unit (CSU), FastTrack for Azure Team and Azure Storage Product Group to ensure our customer base can successfully migrate from ADLS Gen 1 to ADLS Gen 2 in the timeframe noted above. This readiness github repo is meant to serve as insight into the options for migrating, as well as how to complete a migration as efficiently and accurately as possible.
 
 
 ### Key Updates
