@@ -8,18 +8,20 @@
   "keyVaultName" : "<<keyVaultName>>",
   "factoryName" : "<<factoryName>>",
   "resourceGroupName" : "<<resourceGroupName>>",
-  "location" : "location",
+  "location" : "<<location i.e. eastus>>",
   "overwrite" : "true",
   "pipeline": [  
 	{
-		"pipelineId" : "1",
+		"pipelineId" : "1",                                           //<<Enter the pipeline number. For example: 1,2
 		"FullLoad": "true",
 			"pipelineDetails": [
+				//Activity 1
 				{
-					"sourcePath": "/AdventureWorks/Raw",
-					"destinationPath": "/AdventureWorks/Raw",
-					"destinationContainer": "fullLoadtest"
+					"sourcePath": "/AdventureWorks/Raw", //"Enter the Gen1 full path. For example: /path-name"
+					"destinationPath": "/AdventureWorks/Raw", //"Enter the Gen2 full path. For example: path-name"
+					"destinationContainer": "fullLoadtest" //"Enter the Gen2 container name"
 				},
+				//Activity 2
 				{
 					"sourcePath": "/AdventureWorks/ProcessedHDI",
 					"destinationPath": "/AdventureWorks/ProcessedHDI",

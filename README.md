@@ -80,6 +80,7 @@ Prior to working with a customer there are three items that should be confirmed.
 * [Cost Comparison](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=ccfb58ab-66fd-4dcc-a6da-7f52b24c223f#azure-data-lake-storage)
 * [Migration Deck](https://gearup.microsoft.com/resources/azure-storage?selectedassetcontainerid=8cd43bbc-f909-4a30-bb14-1f047d592725#azure-data-lake-storage)
 * [Gen1 and Gen2 ACL Behavior and Differences](https://github.com/Azure/adlsgen1togen2migration/tree/main/1-Assess/ADLS%20Gen1%20and%20Gen2%20ACL%20Behavior)
+* [Azure Blob Storage,Performance and ADLS Gen1 Migration Battlecard](https://github.com/Azure/adlsgen1togen2migration/tree/main/Assets/AzureBlobStorage-Performance-ADLSGen1MigrationBattlecard.pptx)
 * [FAQs](https://github.com/Azure/adlsgen1togen2migration/tree/main/FAQs)
 
 
