@@ -1,6 +1,6 @@
 ﻿
-Param(  
-    [string]$inputConfigFilePath 
+Param(
+    [string]$inputConfigFilePath
 )
 
 $fileRootPath = $PSScriptRoot + "\"
@@ -46,7 +46,7 @@ function GetKeyVaultSecret {
         [string] $secretName
     )
     process {
-        (Get-AzKeyVaultSecret -vaultName $vaultName -name $secretName).SecretValueText
+        Get-AzKeyVaultSecret -vaultName $vaultName -name $secretName -AsPlainText
     }
 }
 
@@ -59,11 +59,11 @@ function CreateFolder {
         [string] $filePath
     )
     process {
-        
+
         if (Test-Path -Path $filePath) {
 
-            $removeItem = Remove-Item $filePath -Recurse  
-                      
+            $removeItem = Remove-Item $filePath -Recurse
+
         }
         $newItem = New-Item -ItemType directory -Path $filePath
     }
@@ -85,13 +85,13 @@ function CreateDataFactory {
         $dataFactory = Get-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Name $dataFactoryName -ErrorAction SilentlyContinue
         if (!$dataFactory) {
 
-            $setDataFactory = Set-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Name $dataFactoryName -Location $dataFactoryLocation -ErrorAction Stop   
+            $setDataFactory = Set-AzDataFactoryV2 -ResourceGroupName $resourceGroupName -Name $dataFactoryName -Location $dataFactoryLocation -ErrorAction Stop
 
         }
     }
 }
 
-# Create Gen1 linked service 
+# Create Gen1 linked service
 
 function CreateGen1LinkedServices {
     [CmdletBinding()]
@@ -101,7 +101,7 @@ function CreateGen1LinkedServices {
         [Parameter(Mandatory = $true)]
         [string] $dataFactoryName,
         [Parameter(Mandatory = $true)]
-        [string] $lsName,       
+        [string] $lsName,
         [Parameter(Mandatory = $true)]
         [string] $dataLakeStoreUri,
         [Parameter(Mandatory = $true)]
@@ -117,9 +117,9 @@ function CreateGen1LinkedServices {
         $spnId = $inputConfigData.servicePrincipleId
         $spnSecret = $inputConfigData.servicePrincipleSecret
         $gen1LSTemplate = Get-Content -Raw -Path $lsTemplatePath
-        $gen1LSTemplate = $gen1LSTemplate.Replace("@@linkedServiceName@@", $linkedServiceName).Replace("@@dataLakeStoreUri@@", $dataLakeStoreUri).Replace("@@servicePrincipalId@@", $spnId).Replace("@@tenant@@", $Tenant).Replace("@@subscriptionId@@", $subscriptionId).Replace("@@resourceGroupName@@", $resourceGroupName).Replace("@@servicePrincipalKey@@", $spnSecret)              
-        $gen1LSTemplate | Set-Content $lsPublishPath        
-        $setGen1LinkedServices = Set-AzDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $lsName -File $lsPublishPath -ErrorAction Stop -Force | Format-List                       
+        $gen1LSTemplate = $gen1LSTemplate.Replace("@@linkedServiceName@@", $linkedServiceName).Replace("@@dataLakeStoreUri@@", $dataLakeStoreUri).Replace("@@servicePrincipalId@@", $spnId).Replace("@@tenant@@", $Tenant).Replace("@@subscriptionId@@", $subscriptionId).Replace("@@resourceGroupName@@", $resourceGroupName).Replace("@@servicePrincipalKey@@", $spnSecret)
+        $gen1LSTemplate | Set-Content $lsPublishPath
+        $setGen1LinkedServices = Set-AzDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $lsName -File $lsPublishPath -ErrorAction Stop -Force | Format-List
     }
 }
 
@@ -141,13 +141,13 @@ function CreateGen2LinkedServices {
         [Parameter(Mandatory = $true)]
         [string] $lsPublishPath
     )
-    process {        
-        $accountKey = GetKeyVaultSecret -VaultName $vaultName -SecretName "Gen2AccountKey"       
+    process {
+        $accountKey = GetKeyVaultSecret -VaultName $vaultName -SecretName "Gen2AccountKey"
         $gen2LSTemplate = Get-Content -Raw -Path $lsTemplatePath
         $gen2LSTemplate = $gen2LSTemplate.Replace("@@linkedServiceName@@", $lsName).Replace("@@url@@", $accountUri).Replace("@@accountKey@@", $accountKey)
         $gen2LSTemplate | Set-Content $lsPublishPath
         $setGen2LinkedServices = Set-AzDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $lsName -File $lsPublishPath -ErrorAction Stop -Force | Format-List
-    }    
+    }
 }
 
 # Check if linked service already exist
@@ -160,21 +160,21 @@ function LinkedServiceExists {
         [Parameter(Mandatory = $true)]
         [string] $dataFactoryName,
         [Parameter(Mandatory = $true)]
-        [string] $lsName        
+        [string] $lsName
     )
-    process {        
+    process {
         $linkedServices = Get-AzDataFactoryV2LinkedService -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -ErrorAction Stop
         $linkedServiceExist = $false
-        foreach ($ls in $linkedServices) { 
+        foreach ($ls in $linkedServices) {
 
             if ( $ls.Name -eq $lsName) { $linkedServiceExist = $true; break; }
 
         }
         $linkedServiceExist
-    }    
+    }
 }
 
-# Create Gen1 dataset 
+# Create Gen1 dataset
 
 function CreateGen1DataSet {
     [CmdletBinding()]
@@ -196,12 +196,12 @@ function CreateGen1DataSet {
         [Parameter(Mandatory = $true)]
         [string] $dsPublishPath
     )
-    process {       
+    process {
         $gen1DSTemplate = Get-Content -Raw -Path $dsTemplatePath
         $gen1DSTemplate = $gen1DSTemplate.Replace("@@dataSetName@@", $dsName).Replace("@@referenceName@@", $lsReferenceName).Replace("@@type@@", $type).Replace("@@folderPath@@", $gen1FolderPath)
         $gen1DSTemplate | Set-Content $dsPublishPath
         $setGen1Dataset = Set-AzDataFactoryV2Dataset -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $dsName -DefinitionFile $dsPublishPath -ErrorAction Stop -Force
-    }    
+    }
 }
 
 # Create Gen2 dataset
@@ -222,18 +222,18 @@ function CreateGen2DataSet {
         [Parameter(Mandatory = $true)]
         [string] $gen2Container,
         [Parameter(Mandatory = $true)]
-        [string] $gen2FolderPath,        
+        [string] $gen2FolderPath,
         [Parameter(Mandatory = $true)]
         [string] $dsTemplatePath,
         [Parameter(Mandatory = $true)]
         [string] $dsPublishPath
     )
-    process {       
+    process {
         $gen2DSTemplate = Get-Content -Raw -Path $dsTemplatePath
         $gen2DSTemplate = $gen2DSTemplate.Replace("@@dataSetName@@", $dsName).Replace("@@referenceName@@", $lsReferenceName).Replace("@@type@@", $type).Replace("@@folderPath@@", $gen2FolderPath).Replace("@@fileSystem@@", $gen2Container)
         $gen2DSTemplate | Set-Content $dsPublishPath
         $setGen2Dataset = Set-AzDataFactoryV2Dataset -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $dataSetName -DefinitionFile $dsPublishPath -ErrorAction Stop -Force
-    }    
+    }
 }
 
 # Check dataset already exists or not
@@ -246,18 +246,18 @@ function DataSetExists {
         [Parameter(Mandatory = $true)]
         [string] $dataFactoryName,
         [Parameter(Mandatory = $true)]
-        [string] $dsName        
+        [string] $dsName
     )
-    process {        
+    process {
         $dataSets = Get-AzDataFactoryV2Dataset -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -ErrorAction Stop
         $dataSetExist = $false
-        foreach ($ds in $dataSets) { 
+        foreach ($ds in $dataSets) {
 
             if ( $ds.Name -eq $dsName) { $dataSetExist = $true; break; }
 
         }
         $dataSetExist
-    }    
+    }
 }
 
 # Copy activity
@@ -278,12 +278,12 @@ function CopyPipelineActivities {
         [Parameter(Mandatory = $true)]
         [string] $pTemplatePath
     )
-    process {   
-        
+    process {
+
         $pipelineTemplate = Get-Content -Raw -Path $pTemplatePath
         $pipelineTemplate = $pipelineTemplate.Replace("@@activityName@@", $activityName).Replace("@@inputFolderPath@@", $inputFolderPath).Replace("@@outputFolderPath@@", $outputFolderPath).Replace("@@inputReferenceName@@", $inputReferenceName).Replace("@@outputReferenceName@@", $outputReferenceName)
         $pipelineTemplate
-    }    
+    }
 }
 
 # Create a pipeline with copy activities
@@ -304,7 +304,7 @@ function CreateCopyPipeline {
         [Parameter(Mandatory = $true)]
         [string] $isIncremental
     )
-    process {       
+    process {
         $activityOutput = $activities.TrimStart(',')
         if ($isIncremental -eq "true") {
 
@@ -315,10 +315,10 @@ function CreateCopyPipeline {
 
             $activityOutput = $headPipeline.Replace("@@pipelineName@@", $pipelineName) + $activityOutput + $tailPipeline
 
-        }        
+        }
         $activityOutput | Set-Content $pPublishPath
         $setPipeline = Set-AzDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -Name $pipelineName -DataFactoryName $dataFactoryName -File $pPublishPath -ErrorAction Stop -Force
-    }    
+    }
 }
 
 # Check pipeline exists or not
@@ -331,18 +331,18 @@ function PipelineExists {
         [Parameter(Mandatory = $true)]
         [string] $dataFactoryName,
         [Parameter(Mandatory = $true)]
-        [string] $pName        
+        [string] $pName
     )
-    process {        
+    process {
         $pipelines = Get-AzDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -ErrorAction Stop
         $pipelineExist = $false
-        foreach ($p in $dataSets) { 
+        foreach ($p in $dataSets) {
 
             if ( $p.Name -eq $pName) { $pipelineExist = $true; break; }
 
         }
         $pipelineExist
-    }    
+    }
 }
 
 
@@ -372,12 +372,12 @@ function CreateTrigger {
         [Parameter(Mandatory = $true)]
         [string] $tTemplatePath
     )
-    process {       
+    process {
         $triggerTemplate = Get-Content -Raw -Path $tTemplatePath
         $triggerTemplate = $triggerTemplate.Replace("@@dataFactoryTriggerName@@", $pipelineTriggerName).Replace("@@dataFactoryPipeLineName@@", $pipelineName).Replace("@@frequency@@", $frequency).Replace("@@interval@@", $interval).Replace("@@startTime@@", $triggerStartTime).Replace("@@endTime@@", $triggerEndTime)
         $triggerTemplate | Set-Content $tPublishPath
         $setTrigger = Set-AzDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -Name $pipelineTriggerName -DefinitionFile $tPublishPath -ErrorAction Stop -Force
-    }    
+    }
 }
 
 CreateFolder -FilePath $actualFilePath
@@ -398,20 +398,20 @@ foreach ($factory in $sourceConfigData.factories[0]) {
         try {
 
             $linkedServiceExists = LinkedServiceExists -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -lsName $linkedServiceName
-            
+
             if (!($linkedServiceExists) -or ($linkedServiceOverwrite -eq 'true')) {
 
                 $adlsGen1LSType = "AzureDataLakeStore"
-                $adlsGen2LSType = "AzureBlobFS"            
+                $adlsGen2LSType = "AzureBlobFS"
                 if ($eachLinkedServices.properties.type -eq $adlsGen1LSType) {
 
-                    CreateGen1LinkedServices -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -lsName $linkedServiceName -dataLakeStoreUri $eachLinkedServices.properties.dataLakeStoreUri -tenant $eachLinkedServices.properties.tenant -subscriptionId $eachLinkedServices.properties.subscriptionId -lsTemplatePath $templatePath$gen1LSTemplateFileName -lsPublishPath $actualFilePath$linkedServiceName'.JSON' 
+                    CreateGen1LinkedServices -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -lsName $linkedServiceName -dataLakeStoreUri $eachLinkedServices.properties.dataLakeStoreUri -tenant $eachLinkedServices.properties.tenant -subscriptionId $eachLinkedServices.properties.subscriptionId -lsTemplatePath $templatePath$gen1LSTemplateFileName -lsPublishPath $actualFilePath$linkedServiceName'.JSON'
                     Write-Host "Linked services created : "$linkedServiceName -ForegroundColor Green
 
                 }
                 if ($eachLinkedServices.properties.type -eq $adlsGen2LSType) {
 
-                    CreateGen2LinkedServices -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -lsName $linkedServiceName -accountUri $eachLinkedServices.properties.url -lsTemplatePath $templatePath$gen2LSTemplateFileName -lsPublishPath $actualFilePath$linkedServiceName'.JSON' 
+                    CreateGen2LinkedServices -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -lsName $linkedServiceName -accountUri $eachLinkedServices.properties.url -lsTemplatePath $templatePath$gen2LSTemplateFileName -lsPublishPath $actualFilePath$linkedServiceName'.JSON'
                     Write-Host "Linked services created : "$linkedServiceName -ForegroundColor Green
 
                 }
@@ -422,7 +422,7 @@ foreach ($factory in $sourceConfigData.factories[0]) {
             Write-Error $_.Exception.Message  -ErrorAction Continue
             Write-Error $_.Exception.ItemName -ErrorAction stop
         }
-        
+
     }
 
     foreach ($eachDataSet in $factory.dataSets) {
@@ -431,7 +431,7 @@ foreach ($factory in $sourceConfigData.factories[0]) {
 
         try {
 
-            $dataSetExists = DataSetExists -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -dsName $dataSetName 
+            $dataSetExists = DataSetExists -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -dsName $dataSetName
 
             if (!($dataSetExists) -or ($dataSetOverwrite -eq 'true')) {
 
@@ -439,13 +439,13 @@ foreach ($factory in $sourceConfigData.factories[0]) {
                 $adlsGen2DSLocationType = "AzureBlobFSLocation"
                 if ($eachDataSet.properties.typeProperties.locationType -eq $adlsGen1DSLocationType) {
 
-                    CreateGen1DataSet -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -dsName $dataSetName -lsReferenceName $eachDataSet.referenceName -type $eachDataSet.properties.type -gen1FolderPath $eachDataSet.properties.typeProperties.folderPath -dsTemplatePath $templatePath$gen1DSTemplateFileName -dsPublishPath $actualFilePath$dataSetName'.JSON' 
+                    CreateGen1DataSet -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -dsName $dataSetName -lsReferenceName $eachDataSet.referenceName -type $eachDataSet.properties.type -gen1FolderPath $eachDataSet.properties.typeProperties.folderPath -dsTemplatePath $templatePath$gen1DSTemplateFileName -dsPublishPath $actualFilePath$dataSetName'.JSON'
                     Write-Host "Dataset created : "$dataSetName -ForegroundColor Green
-                                   
+
                 }
                 if ($eachDataSet.properties.typeProperties.locationType -eq $adlsGen2DSLocationType) {
 
-                    CreateGen2DataSet -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -dsName $dataSetName -lsReferenceName $eachDataSet.referenceName -type $eachDataSet.properties.type -gen2Container $eachDataSet.properties.typeProperties.fileSystem -gen2FolderPath $eachDataSet.properties.typeProperties.folderPath -dsTemplatePath $templatePath$gen2DSTemplateFileName -dsPublishPath $actualFilePath$dataSetName'.JSON' 
+                    CreateGen2DataSet -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -dsName $dataSetName -lsReferenceName $eachDataSet.referenceName -type $eachDataSet.properties.type -gen2Container $eachDataSet.properties.typeProperties.fileSystem -gen2FolderPath $eachDataSet.properties.typeProperties.folderPath -dsTemplatePath $templatePath$gen2DSTemplateFileName -dsPublishPath $actualFilePath$dataSetName'.JSON'
                     Write-Host "Dataset created : "$dataSetName -ForegroundColor Green
 
                 }
@@ -456,21 +456,21 @@ foreach ($factory in $sourceConfigData.factories[0]) {
             Write-Error $_.Exception.Message  -ErrorAction Continue
             Write-Error $_.Exception.ItemName -ErrorAction stop
         }
-    }    
-   
+    }
+
     foreach ($eachPipeline in $factory.pipelines) {
         $pipelineName = $eachPipeline.name
-        $pipelineOverwrite = $eachPipeline.overwrite 
-        $incremental = $eachPipeline.incremental  
+        $pipelineOverwrite = $eachPipeline.overwrite
+        $incremental = $eachPipeline.incremental
         $triggerName = $eachPipeline.triggerName
-        $triggerFrequency = $eachPipeline.triggerFrequency 
+        $triggerFrequency = $eachPipeline.triggerFrequency
         $triggerInterval = $eachPipeline.triggerInterval
         $triggerStartTime = $eachPipeline.triggerUTCStartTime
         $triggerEndTime = $eachPipeline.triggerUTCEndTime
 
         try {
 
-            $pipelineExists = PipelineExists -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -pName $pipelineName 
+            $pipelineExists = PipelineExists -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -pName $pipelineName
             if (!($pipelineExists) -or ($pipelineOverwrite -eq 'true')) {
                 $activityList = ""
                 foreach ($eachActivity in $eachPipeline.activities) {
@@ -483,8 +483,8 @@ foreach ($factory in $sourceConfigData.factories[0]) {
 
                         $activity = CopyPipelineActivities -activityName $eachActivity.name -inputReferenceName $eachActivity.inputDataSetReferenceName -outputReferenceName $eachActivity.outputDataSetReferenceName -pTemplatePath $templatePath$pipelineTemplateFileName
 
-                    }                
-                    
+                    }
+
                     $activityList = $activityList + "," + $activity
                 }
                 if ($activityList -ne ",") {
@@ -492,12 +492,12 @@ foreach ($factory in $sourceConfigData.factories[0]) {
                     CreateCopyPipeline -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -pipelineName $pipelineName -activities $activityList -pPublishPath $actualFilePath$pipelineName'.JSON' -isIncremental $incremental
                     Write-Host "Pipeline created : "$pipelineName -ForegroundColor Green
 
-                }            
+                }
             }
 
             if (($incremental -eq "false") -and ($pipelineOverwrite -eq 'true')) {
 
-                $runId = Invoke-AzDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -PipelineName $pipelineName            
+                $runId = Invoke-AzDataFactoryV2Pipeline -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -PipelineName $pipelineName
                 $pipelineRunIdDetails.Add($eachPipeline.pipelineId, $runId)
                 Write-Host "Pipeline invoked for : "$pipelineName -ForegroundColor Green
 
@@ -505,15 +505,15 @@ foreach ($factory in $sourceConfigData.factories[0]) {
             if (($incremental -eq "true") -and ($pipelineOverwrite -eq 'true')) {
 
                 $getPipelineTrigger = Get-AzDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -ErrorAction Stop
-                
+
                 foreach ($triggerItem in $getPipelineTrigger) {
-                    if (($triggerItem.Name -eq $eachPipeline.triggerName) -and ($triggerItem.RuntimeState -eq "Started")) {                        
+                    if (($triggerItem.Name -eq $eachPipeline.triggerName) -and ($triggerItem.RuntimeState -eq "Started")) {
                         Stop-AzDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -TriggerName $eachPipeline.triggerName -ErrorAction Stop -Force
                         Write-Host "Stopped the existing trigger : "$eachPipeline.triggerName -ForegroundColor Yellow
                     }
                 }
 
-                CreateTrigger -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -pipelineName $pipelineName -pipelineTriggerName $eachPipeline.triggerName -frequency $triggerFrequency -interval $triggerInterval -triggerStartTime $triggerStartTime -triggerEndTime $triggerEndTime -tPublishPath $actualFilePath$triggerName'.JSON' -tTemplatePath $templatePath$pipelineTriggerFileName 
+                CreateTrigger -resourceGroupName $resourceGroupName -dataFactoryName $dataFactoryName -pipelineName $pipelineName -pipelineTriggerName $eachPipeline.triggerName -frequency $triggerFrequency -interval $triggerInterval -triggerStartTime $triggerStartTime -triggerEndTime $triggerEndTime -tPublishPath $actualFilePath$triggerName'.JSON' -tTemplatePath $templatePath$pipelineTriggerFileName
                 Write-Host "Pipeline trigger created : "$eachPipeline.triggerName -ForegroundColor Green
                 Start-AzDataFactoryV2Trigger -ResourceGroupName $resourceGroupName -DataFactoryName $dataFactoryName -TriggerName $eachPipeline.triggerName -Force
                 Write-Host "Pipeline trigger started : "$eachPipeline.triggerName -ForegroundColor Green
@@ -524,7 +524,7 @@ foreach ($factory in $sourceConfigData.factories[0]) {
             Write-Error "`n`n***** `nFailed while working on pipeline and trigger. Please check the following error details ***** `n`n" -ErrorAction Continue
             Write-Error $_.Exception.Message  -ErrorAction Continue
             Write-Error $_.Exception.ItemName -ErrorAction stop
-        } 
-    }   
+        }
+    }
 }
 return $pipelineRunIdDetails

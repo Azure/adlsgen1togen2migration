@@ -12,20 +12,20 @@
   "overwrite" : "true",
   "pipeline": [  
 	{
-		"pipelineId" : "1",                                           //<<Enter the pipeline number. For example: 1,2
+		"pipelineId" : "1",                                           //Enter the pipeline number. For example: 1,2
 		"FullLoad": "true",
-			"pipelineDetails": [
+		"pipelineDetails": [
 				//Activity 1
 				{
-					"sourcePath": "/AdventureWorks/Raw", //"Enter the Gen1 full path. For example: /path-name"
-					"destinationPath": "/AdventureWorks/Raw", //"Enter the Gen2 full path. For example: path-name"
-					"destinationContainer": "fullLoadtest" //"Enter the Gen2 container name"
+					"sourcePath": "/AdventureWorks/Raw", //Enter the Gen1 full path. For example: /path-name
+					"destinationPath": "/AdventureWorks/Raw", //Enter the Gen2 full path. For example: path-name
+					"destinationContainer": "destinationcontainer-a" //Enter the Gen2 container name-make sure that it is in lower case
 				},
 				//Activity 2
 				{
-					"sourcePath": "/AdventureWorks/ProcessedHDI",
-					"destinationPath": "/AdventureWorks/ProcessedHDI",
-					"destinationContainer": "fullLoadtest" 
+					"sourcePath": "/AdventureWorks/ProcessedHDI",      //Enter the Gen1 full path. For example: /path-name
+					"destinationPath": "/AdventureWorks/ProcessedHDI", //Enter the Gen2 full path. For example: path-name
+					"destinationContainer": "destinationcontainer-b"   //Enter the Gen2 container name-make sure that it is in lower case
 				}
 		]
 	}

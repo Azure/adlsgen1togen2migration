@@ -8,14 +8,15 @@
   "keyVaultName" : "<<keyVaultName>>",
   "factoryName" : "<<factoryName>>",
   "resourceGroupName" : "<<resourceGroupName>>",
-  "location" : "location",
+  "location" : "<<location i.e. eastus>>",
   "overwrite" : "true",
   "pipeline": [  
 	{
-		"pipelineId" : "1",
+		"pipelineId" : "1",                                           //Enter the pipeline number. For example: 1,2
 		"isChurningOrIsIncremental" : "false",
-		"pipelineDetails":[			
-			{			
+		"pipelineDetails": [
+				//Activity 1
+				{
 				"sourcePath" : "/AdventureWorks/Raw/DimProduct",
 				"destinationPath" : "AdventureWorks/Raw/DimProduct",
 				"destinationContainer" : "prod"
@@ -26,7 +27,7 @@
 		"pipelineId" : "2",
 		"isChurningOrIsIncremental" : "false",
 		"pipelineDetails":[			
-			
+			//Activity 1
 			{			
 				"sourcePath" : "/AdventureWorks/Raw/FactFinance",
 				"destinationPath" : "AdventureWorks/Raw/FactFinance",

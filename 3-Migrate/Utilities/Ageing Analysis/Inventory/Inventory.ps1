@@ -9,8 +9,8 @@ $ServicePrincipalId = <<Enter the ServicePrincipalId>>
 $ServicePrincipalKey = <<Enter the ServicePrincipalKey>>
 $dataLakeStore=<<Enter the dataLakeStore name>>
 
-$inputPath=<<Enter the source path -location of root folder to which needs the details>>
-$outputPath=<<Enter the destination path -location to save the output >>
+$inputPath=<<Enter the source path -location of root folder to which needs the details i.e /AdventureWorks>>
+$outputPath=<<Enter the destination path -location to save the output i.e C:\Temp\ADLS\ >>
 
 # connect to Azure datalake gen1 storage
 $SecurePassword = ConvertTo-SecureString $ServicePrincipalKey -AsPlainText -Force
@@ -25,13 +25,13 @@ $outputFile="$outputPath$outputFileName.txt"
 $Detailsfile = "$outputPath"+$outputFileName+"_Details1.txt"
 Remove-Item $Detailsfile -ErrorAction Ignore
 
-# Function to get Gen1 file details 
+# Function to get Gen1 file details
 
 Try
 {
     $dataLakeStoreName = "$dataLakeStore.azuredatalakestore.net"
 
-    Export-AzDataLakeStoreChildItemProperty -Account $dataLakeStoreName -Path $inputPath -OutputPath $outputFile -MaximumDepth 2  -GetDiskUsage -IncludeFile    
+    Export-AzDataLakeStoreChildItemProperty -Account $dataLakeStoreName -Path $inputPath -OutputPath $outputFile -MaximumDepth 2  -GetDiskUsage -IncludeFile
 
 	"Path"+"`t"+"Type"+"TotalNoOfDirectFiles"+"`t"+"TotalNoOfDirectDirectories"+"`t"+"TotalSize"+"`t"+"`t"+"TotalNoOfFiles"+"`t"+"TotalNoOfDirectories"+"`t"+"Owner"+"`t"+"Permission"+"`t"+"LastModifiedTime"+"`t"+"RecentChildModificationTime"+"`t"+"ActiveFlag" | Out-File -FilePath $Detailsfile -Append -Force
     $collection = @()
@@ -46,8 +46,8 @@ Try
 			$ChildData=Get-AzDataLakeStoreChildItem -Account $dataLakeStoreName -path $($_.'Entry Name') | Select-Object -property Path,$LastModified | sort LastModified -descending | select -First 1 | select LastModified,@{l="ActiveFlag";e={if ((New-TimeSpan -Start $_.LastModified -End $EndDate).days -gt 40) {'False'} else {'True'}}}
 
 		$disk.'Entry name'+"`t"+$disk.'Entry Type' +"`t"+$disk.'Total number of direct files'+"`t"+$disk.'Total number of direct directories'+"`t"+$disk.'Total size'+"`t"+$disk.'Total number of files'+"`t"+$disk.'Total number of direct directories'+"`t"+$data.Owner+"`t"+$data.permission+"`t"+$data.LastModified+"`t"+$ChildData.LastModified+"`t"+$ChildData.ActiveFlag | Out-File -FilePath $Detailsfile -Append -Force
-       
-        } 
+
+        }
 }
 Catch
 {
