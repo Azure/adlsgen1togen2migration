@@ -8,6 +8,7 @@ In addtion, please consider some of the things that worked well in Gen1. What di
 
 To help you get started we have provided an [ADLS Migration Weekend Checklist](https://github.com/Azure/adlsgen1togen2migration/blob/main/2-Plan/ADLSMigrationWeekendChecklist.md) that will help you assess what activities you need to accomplish during a *Migration Weekend*, and provided below a *"Target Architecture Definition"* that we have put together to help you think through some of these items:
 
+Finally, please be sure to review the [ADLS Security Considerations](https://github.com/Azure/adlsgen1togen2migration/blob/main/2-Plan/ADLSSecurityConsiderations.md) that will help guide you in illustrating the principals, configurations and technical controls that will protect and secure your Azure Storage Accounts and ADLS Gen2 Data Lakes.
 
 |Design Consideration  |Options  |Questions  |
 |---------|---------|---------|

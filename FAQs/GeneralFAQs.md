@@ -12,17 +12,17 @@
 ##
 **Q:** *What will happen to the data I store in ADLS Gen1?* 
 
-**A:** Customers can continue to manage their ADLS Gen1 accounts, access their data and run workloads on Gen1 until the service is retired on **Feb 29, 2024**. After **Feb 29, 2024**, you will not be able to manage or access data on your ADLS Gen1 accounts. We strongly recommend that you migrate your data to ADLS Gen2.
+**A:** Customers can continue to manage their ADLS Gen1 accounts, access their data and run workloads on Gen1 until the service is retired on **Feb 29, 2024**. After **Feb 29, 2024**, **you will not be able to manage or access data on your ADLS Gen1 accounts. We strongly recommend that you migrate your data to ADLS Gen2.**
 
 ##
 **Q:** *When will customers be blocked from creating ADLS Gen1 Accounts ?*
 
-**A:** Customers will be blocked from creating new accounts **in Feb 2022** 
+**A:** Customers will be blocked from creating new accounts **in Feb 2023** 
 
 ##
 **Q:** *When will the Azure Experience Portal Migration Tool go GA?*
 
-**A:** Targeting GA by end of year **Q4CY22**.
+**A:** Targeting GA by **Q2 CY2022**.
 
 ##
 **Q:** *What are the benefits of migrating to ADLS Gen2?*
