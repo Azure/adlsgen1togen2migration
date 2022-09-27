@@ -160,7 +160,7 @@ To learn more, see [create service principal account](https://docs.microsoft.com
 	    "destinationContainer" : "Enter the Gen2 container name"
    ```
  
-  **NOTE**: The **destinationPath** string will not be having Gen2 container name. It will have the file path same as Gen1.  
+  **NOTE**: The **destinationPath** string should not have the Gen2 Container name. It will have the file path same as Gen1.  
    Path to [FullLoadConfig.json](https://github.com/Azure/adlsgen1togen2migration/blob/main/3-Migrate/Lift%20and%20Shift/Configuration/FullLoadConfig.json) script for more reference.
  
  ### Azure data factory pipeline creation and execution
