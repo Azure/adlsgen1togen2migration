@@ -11,7 +11,8 @@ Below you will find the latest updates on key items with ADLS Gen 1 to Gen 2 Mig
 | ADLS Gen1 | Will be blocked for new customers | February 2022|
 | ADLS Gen1 | Will be retired | February 2024|
 | Microsoft Managed Migration Experience (M3) Tool | This is a managed tool that will automatically migrate customers data from Gen1 to the new Gen2 account. | Public Preview - July 2021|
-| ADLA Compatibility with ADLS Gen2 | Azure Data Lake Analytics is a manged service that allows querying of Big Data for insights. Currently this is only supported for Gen1. **NOTE: ADLA is not a platform that is currently being invested in. As a result, PG has encouraged customers to migrate to alternative platforms such as Azure Databricks. This should be considered as a seperate project and not in scope for initial Data Lake migration.**| End of CY21 |
+
+ **NOTE: ADLA is not a platform that is currently being invested in. As a result, PG has encouraged customers to migrate to alternative platforms such as Azure Databricks. This should be considered as a seperate project and not in scope for initial Data Lake migration.**
 
 ## Mindmap(s)
 
